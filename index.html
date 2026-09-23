@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6b21a">
+  <meta name="application-name" content="Pizza Beat POS">
+  <meta name="apple-mobile-web-app-title" content="PB POS">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <title>Pizza Beat POS</title>
+  <style>
+    :root{--bg:#090909;--card:#141414;--txt:#fff;--muted:#b7b7b7;--gold:#f6b21a;--line:#303030}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:var(--bg);color:var(--txt);font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{width:min(430px,100%);background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 18px 55px rgba(0,0,0,.45);text-align:center}
+    .brand img{width:96px;height:96px;border-radius:24px;margin-bottom:14px}
+    h1{font-size:29px;margin:0}.sub{margin:6px 0 22px;color:var(--muted);font-size:14px}
+    .status{padding:13px 14px;border-radius:14px;background:#0d0d0d;color:var(--muted);font-size:13px;line-height:1.45;margin-bottom:14px}
+    button{width:100%;padding:15px;border:0;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;background:var(--gold);color:#111}
+    .small{font-size:11px;color:var(--muted);line-height:1.45;margin-top:16px}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand"><img src="./icon.svg" alt="Pizza Beat POS"></div>
+    <h1>Pizza Beat POS</h1>
+    <div class="sub">Punto de venta · Microcentro</div>
+    <div class="status">Acceso directo al sistema de ventas de Pizza Beat.</div>
+    <button onclick="abrirPOS()">ABRIR POS</button>
+    <div class="small">Instalá esta aplicación en la pantalla de inicio para ingresar al POS desde su propio ícono.</div>
+  </main>
+<script>
+  const POS_URL='https://script.google.com/macros/s/AKfycby9v7apsTANmy4Jy7DGaAcz3BXlNXO5uUTt9K2Vf_nlR30mzrVjZMqbKFc16bRGMRrW/exec?vista=pos';
+  function abrirPOS(){location.href=POS_URL;}
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+</script>
+</body>
+</html>
