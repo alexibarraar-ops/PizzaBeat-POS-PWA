@@ -1,4 +1,4 @@
-const CACHE='pizza-beat-pos-pwa-v4';
+const CACHE='pizza-beat-pos-pwa-v5';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));
