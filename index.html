@@ -33,7 +33,7 @@
     <div class="small">Instalá esta aplicación en la pantalla de inicio para ingresar al POS desde su propio ícono.</div>
   </main>
 <script>
-  const POS_URL='https://script.google.com/macros/s/AKfycbxKpUthAmPB8Z222CAeOeFJ4_NpA9TNTGuBbWa2e1cqlm3IzU6W-TyqBSRj76R2816l/exec?vista=pos';
+  const POS_URL='https://script.google.com/macros/s/AKfycbxNOPlr81mrcvCg3-q8NSqNZweDRYm8dNvh8O5H-wU5sHj1m19BKZRapTJ5DFLD5nOZ/exec?vista=pos_operador';
   function abrirPOS(){location.href=POS_URL;}
   if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
 </script>
